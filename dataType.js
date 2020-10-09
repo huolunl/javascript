@@ -84,3 +84,79 @@ isNaN(['123']) // false
 // 字符串 //
 //字符串就是零个或多个排在一起的字符，放在单引号或双引号之中。
 
+
+// 对象 //
+// 对象的key只能是字符串
+
+
+// 函数 //
+// 函数的声明三种方式
+//1
+function print(s) {
+    console.log(s);
+  }
+//2
+var print = function(s) {
+console.log(s);
+};
+//3
+var add = new Function(
+    'x',
+    'y',
+    'return x + y'
+  );
+  // 等同于
+  function add(x, y) {
+    return x + y;
+  }
+  // 函数的属性和方法
+console.log(print.name) // print
+console.log(add.name) // anonymous
+console.log(print.length) // 1 参数的个数
+console.log(print.toString()) // 源码
+//JavaScript 语言将函数看作一种值，与其它值（数值、字符串、布尔值等等）地位相同。凡是可以使用值的地方，就能使用函数。
+//JavaScript 语言将函数看作一种值，与其它值（数值、字符串、布尔值等等）地位相同。凡是可以使用值的地方，就能使用函数。
+//JavaScript 引擎将函数名视同变量名，所以采用function命令声明函数时，整个函数会像变量声明一样，被提升到代码头部。
+//函数参数不是必需的，JavaScript 允许省略参数
+function f(a, b) {
+    return a;
+  }
+  
+  f(1, 2, 3) // 1
+  f(1) // 1
+  f() // undefined
+  
+  f.length // 2
+// arguments
+  var f = function (one) {
+    console.log(arguments[0]); //1
+    console.log(arguments[1]); //2
+    console.log(arguments[2]); //3
+  }
+  f(1, 2, 3)
+// 立即调用表达式
+// (function(){ /* code */ }());
+// 或者
+// (function(){ /* code */ })();
+// eval命令接受一个字符串作为参数，并将这个字符串当作语句执行。
+{
+eval('var a = 1'); //let 无效
+console.log(a)
+}
+
+
+// 数组
+// 数组的本质是object，数组的特殊性体现在，它的键名是按次序排列的一组整数（0，1，2...）。
+console.log(typeof [1,2,3]) //object
+console.log(Object.keys(['a','b'])) // [ '0', '1' ]
+console.log('0' in ['a'] ) //true 当作dict处理
+// for in 会遍历所有属性
+var a = [1, 2, 3];
+a.foo = true;
+for (var key in a) {
+  console.log(key);
+}
+// 0
+// 1
+// 2
+// foo
