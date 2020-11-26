@@ -6,6 +6,8 @@
 // 简单说，this就是属性或方法“当前”所在的对象。
 
 
+    // 箭头函数内部的this 总指向定义时的对象，普通函数指向运行时的对象
+
 }
 
 {
@@ -92,4 +94,17 @@
     let print = d.getTime.bind(d); // bind（d） 之后  this 还是指向d
     print() //1481869925657
 
+}
+
+
+{
+    // function f1(f) {
+    //     return function f2() {
+    //         console.log(111)
+    //         f()
+    //     }
+    // }
+    //
+    //
+    // @f1()
 }
