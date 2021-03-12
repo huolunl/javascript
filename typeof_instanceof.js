@@ -6,3 +6,6 @@ console.log(typeof x);// "undefined"
 console.log(typeof Number("a")) // number
 console.log(typeof Number(undefined)) // number
 console.log(Number(undefined)) //NaN     NaN也是一个number
+
+function foo (){}
+console.log(typeof foo) //function
