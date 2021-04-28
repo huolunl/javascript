@@ -27,3 +27,15 @@
 // export { foo, bar };
 
 // 上面代码中，export和import语句可以结合在一起，写成一行。但需要注意的是，写成一行以后，foo和bar实际上并没有被导入当前模块，只是相当于对外转发了这两个接口，导致当前模块不能直接使用foo和bar。
+
+
+// import()函数用于动态加载， 其返回一个promise对象
+button.addEventListener('click', event => {
+    import('./dialogBox.js')
+        .then(dialogBox => {
+            dialogBox.open();
+        })
+        .catch(error => {
+            /* Error handling */
+        })
+});
