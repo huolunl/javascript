@@ -17,7 +17,9 @@
 // export default  导出的  import 可以不写名字 直接倒入
 
 
-// export * from 'circle';
+// export * from 'circle'; 就是字面意思，导出别的模块的方法
+// 上面代码中的export *，表示再输出circle模块的所有属性和方法。
+// 注意，export *命令会忽略circle模块的default方法。然后，上面代码又输出了自定义的e变量和默认方法。
 //export { foo, bar } from 'my_module';
 //
 // // 可以简单理解为
